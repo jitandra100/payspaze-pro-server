@@ -32,7 +32,6 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "30mb" }));
 app.use(compression());
-app.use(handleCors)
 app.use(handlePagination)
 app.use(cookieParser());
 app.disable('x-powered-by')
