@@ -25,6 +25,7 @@ const { combinedLogStream } = require("@config/logger");
 // application level middlewares
 app.use(helmet())
 app.use(cors());
+app.set("trust proxy", true);
 // app.use(morgan('dev'));
 app.use(morgan('combined', { stream: combinedLogStream }));
 
