@@ -10,8 +10,8 @@ const http = require('http');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const { PORT, API_VERSION } = require("./config/index");
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./src/utils/swagger/swagger-output.json');
+//const swaggerUi = require('swagger-ui-express');
+//const swaggerDocument = require('./src/utils/swagger/swagger-output.json');
 const path = require('path')
 
 // Path Alias
@@ -42,13 +42,13 @@ app.disable('x-powered-by')
 app.use(API_VERSION, apiRouterV1)
 
 // swagger
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
-    explorer: true,
-    swaggerOptions: {
-        docExpansion: 'none',
-        filter: true
-    },
-}));
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
+//     explorer: true,
+//     swaggerOptions: {
+//         docExpansion: 'none',
+//         filter: true
+//     },
+// }));
 
 // server status
 app.get('/', (req, res) => {
