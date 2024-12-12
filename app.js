@@ -35,7 +35,6 @@ app.use(bodyParser.json({ limit: "30mb" }));
 app.use(compression());
 app.use(handleCors)
 app.use(handlePagination)
-app.use(handleRateLimit)
 app.use(cookieParser());
 app.disable('x-powered-by')
 app.use(API_VERSION, apiRouterV1)
