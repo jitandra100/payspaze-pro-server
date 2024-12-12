@@ -18,7 +18,7 @@ require('module-alias/register')
 // configs
 require('./config/database')
 
-const { handleCatchError, handleRouteNotFound, handleCors, handlePagination, handleRateLimit } = require("@src/middlewares/express_app");
+const { handleCatchError, handleRouteNotFound, handleCors, handlePagination } = require("@src/middlewares/express_app");
 const { combinedLogStream } = require("@config/logger");
 
 
