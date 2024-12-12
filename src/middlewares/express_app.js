@@ -21,25 +21,6 @@ module.exports = {
         }
     },
 
-    handleCors: (req, res, next) => {
-        try {
-            const origin = req.headers.origin;
-            // Check if the incoming origin is in the allowed origins list
-            if (clientOrigin.includes(origin)) {
-                res.setHeader('Access-Control-Allow-Origin', origin);  // Allow the matched origin
-            } else {
-                // If origin is not allowed, don't set Access-Control-Allow-Origin header
-                res.setHeader('Access-Control-Allow-Origin', '');  // Or leave it unset (no header)
-            }
-            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
-            res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-Width, Content-Type, Accept, Authorization');
-            res.setHeader('Access-Control-Allow-Credentials', true);
-            next();
-        } catch (err) {
-            return res.send(new serviceResponse({ status: 404, errors: err.message }))
-        }
-    },
-
     handlePagination: (req, res, next) => {
         try {
             let maxLimit = 20;
